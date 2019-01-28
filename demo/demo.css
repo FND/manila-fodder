@@ -1,0 +1,32 @@
+manila-fodder.augmented {
+	margin-bottom: 0.5em;
+	border: 2px dashed #AAA;
+	padding: 0.5em;
+	background-color: #EEE;
+}
+manila-fodder.settled {
+	border-style: solid;
+	border-color: #0A0;
+	background-color: #EFE;
+}
+manila-fodder.rejected {
+	border-style: solid;
+	border-color: #A00;
+	background-color: #FEE;
+}
+manila-fodder.pending {
+	border-style: solid;
+	border-color: #AA0;
+	background-color: #FFE;
+}
+
+manila-fodder .hint {
+	margin: 0;
+	text-align: center;
+	color: #888;
+}
+
+manila-fodder ul {
+	padding: 0 0 0 0.5em;
+	list-style-type: none;
+}

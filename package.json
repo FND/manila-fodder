@@ -1,0 +1,28 @@
+{
+	"name": "manila-fodder",
+	"version": "0.0.0",
+	"description": "file uploads with drag'n'drop support",
+	"author": "FND",
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/FND/manila-fodder",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/FND/manila-fodder.git"
+	},
+	"bugs": {
+		"url": "https://github.com/FND/manila-fodder/issues"
+	},
+	"main": "src/index.js",
+	"scripts": {
+		"start": "npm run compile -- --watch",
+		"test": "eslint --cache *.js src && echo ✓",
+		"compile": "faucet --compact"
+	},
+	"dependencies": {
+		"lit-html": "^1.0.0"
+	},
+	"devDependencies": {
+		"eslint-config-fnd": "^1.6.0",
+		"faucet-pipeline-js": "~1.1.1"
+	}
+}

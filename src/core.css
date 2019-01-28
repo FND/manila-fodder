@@ -1,0 +1,14 @@
+manila-fodder {
+	display: block;
+}
+
+manila-fodder.settled input[type=file],
+manila-fodder.settled .note,
+manila-fodder.settled .hint {
+	display: none;
+}
+
+manila-fodder.rejected .note,
+manila-fodder.rejected .hint {
+	display: none;
+}
