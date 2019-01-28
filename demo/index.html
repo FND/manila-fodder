@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>manila-fodder file uploads</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../src/core.css">
+	<link rel="stylesheet" href="demo.css">
+	<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 60rem;
+	margin: 1em auto;
+	font-family: sans-serif;
+}
+
+fieldset {
+	margin: 0 0 1em;
+	border: none;
+	padding: 0;
+}
+
+label {
+	display: block;
+	margin-bottom: 1em;
+}
+
+label span,
+legend {
+	display: block;
+	font-variant: small-caps;
+	margin-bottom: 0.2em;
+}
+
+textarea,
+input[type=text] {
+	display: block;
+	width: 100%;
+}
+	</style>
+</head>
+
+<body>
+	<h1>manila-fodder file uploads</h1>
+
+	<form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+		<label>
+			<span>title</span>
+			<input type="text" name="title">
+		</label>
+
+		<label>
+			<span>description</span>
+			<textarea name="desc" rows="5"></textarea>
+		</label>
+
+		<fieldset>
+			<legend>attachments</legend>
+
+			<manila-fodder hint="drop file here" reset-label="reset"
+					error-multi="multiple files not allowed">
+				<input type="file" name="attachment">
+				<p class="note">max. file size is 2 MB</p>
+			</manila-fodder>
+
+			<manila-fodder hint="drop files here" reset-label="reset">
+				<input type="file" name="attachment" multiple>
+				<p class="note">max. file size is 2 MB</p>
+			</manila-fodder>
+		</fieldset>
+
+		<button>create</button>
+	</form>
+
+	<script src="../dist/bundle.js"></script>
+</body>
+
+</html>
