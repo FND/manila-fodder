@@ -76,7 +76,33 @@ input[type=text] {
 		<button>create</button>
 	</form>
 
-	<script src="../dist/bundle.js"></script>
+	<h2>static states illustration</h2>
+
+	<manila-fodder hint="drop file here" reset-label="reset"
+			error-multi="multiple files not allowed">
+		<input type="file" name="attachment">
+		<p class="note">max. file size is 2 MB</p>
+	</manila-fodder>
+
+	<manila-fodder hint="drop file here" reset-label="reset"
+			error-multi="multiple files not allowed" pending>
+		<input type="file" name="attachment">
+		<p class="note">max. file size is 2 MB</p>
+	</manila-fodder>
+
+	<manila-fodder hint="drop file here" reset-label="reset"
+			error-multi="multiple files not allowed" state="settled">
+		<input type="file" name="attachment">
+		<p class="note">max. file size is 2 MB</p>
+	</manila-fodder>
+
+	<manila-fodder hint="drop file here" reset-label="reset"
+			error-multi="multiple files not allowed" state="rejected">
+		<input type="file" name="attachment">
+		<p class="note">max. file size is 2 MB</p>
+	</manila-fodder>
+
+	<script src="../dist/demo.js"></script>
 </body>
 
 </html>
