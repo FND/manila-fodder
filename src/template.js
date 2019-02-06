@@ -1,11 +1,11 @@
 import { html, render } from "lit-html";
 
-export default (container, field, note, messages, state) => {
-	render(template(field, note, messages, state), container);
+export default (container, { field, note }, messages, { state, files }) => {
+	let nodes = template(field, note, messages, { state, files });
+	render(nodes, container);
 };
 
-function template(field, note, { hint, reset, error }, state) {
-	let files = [...field.files];
+function template(field, note, { hint, reset, error }, { state, files }) {
 	let rejected = state === "rejected";
 	return html`
 ${field}

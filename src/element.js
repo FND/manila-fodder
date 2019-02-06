@@ -89,7 +89,8 @@ export default class ManilaFodder extends HTMLElement {
 			throw new Error(`unknown state: \`${state}\``);
 		}
 
-		render(this, field, this.note, this.messages, state);
+		render(this, { field, note: this.note }, this.messages,
+				{ state, files: field.files });
 	}
 
 	setPending(value) {
