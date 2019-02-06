@@ -16,14 +16,15 @@ ${optional(hint &&
 		html`<p class="hint">${hint}</p>`)}
 ${note}
 
-${optional(state === "settled" && renderFiles(...files))}
+${optional(state === "settled" && renderFiles(files))}
 
 ${optional(rejected && error &&
 		html`<p class="error">${error}</p>`)}
 	`;
 }
 
-function renderFiles(...files) {
+function renderFiles(files) {
+	files = Array.prototype.slice.call(files);
 	return html`
 <ul>
 	${files.map(({ name, size }) => {
