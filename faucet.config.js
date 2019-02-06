@@ -5,7 +5,7 @@ module.exports = {
 		source: "./src/index.js",
 		target: "./dist/bundle.js"
 	}, {
-		source: "./demo/demo.js",
-		target: "./dist/demo.js"
+		source: "./demo.js",
+		target: "./bundle.js"
 	}]
 };

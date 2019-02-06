@@ -1,6 +1,6 @@
 /* eslint-env browser */
-import ManilaFodder from "../src/element";
-import render from "../src/template";
+import ManilaFodder from "./src/element";
+import render from "./src/template";
 
 let FILES = [{
 	name: "minutes.txt",
