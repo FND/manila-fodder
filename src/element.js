@@ -68,12 +68,11 @@ export default class ManilaFodder extends HTMLElement {
 	}
 
 	setState(state) {
-		let { field } = this;
 		// TODO: customizable class names
 		// XXX: ideally container-class toggling should be handled within template
 		switch(state) {
 		case "idle":
-			field.value = "";
+			this.field.value = "";
 			this.classList.remove("settled");
 			this.classList.remove("rejected");
 			break;
@@ -89,8 +88,16 @@ export default class ManilaFodder extends HTMLElement {
 			throw new Error(`unknown state: \`${state}\``);
 		}
 
-		render(this, { field, note: this.note }, this.messages,
-				{ state, files: field.files });
+		this.render(state);
+	}
+
+	render(state, files = this.field.files) { // TODO: optimize via morphdom?
+		this.innerHTML = "";
+		let ui = render({ field: this.field, note: this.note }, this.messages,
+				{ state, files });
+		[].concat(ui).forEach(node => {
+			this.appendChild(node);
+		});
 	}
 
 	setPending(value) {

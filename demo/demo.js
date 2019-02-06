@@ -1,6 +1,5 @@
 /* eslint-env browser */
 import ManilaFodder from "../src/element";
-import render from "../src/template";
 
 let FILES = [{
 	name: "minutes.txt",
@@ -14,7 +13,7 @@ customElements.define("manila-fodder", class extends ManilaFodder {
 	connectedCallback() {
 		let state = this.getAttribute("state");
 		if(state) {
-			this._files = state === "settled" ? FILES : null;
+			this._files = state === "settled" ? FILES : [];
 			setTimeout(() => {
 				this.setState(state);
 			}, 1);
@@ -29,12 +28,7 @@ customElements.define("manila-fodder", class extends ManilaFodder {
 		super.connectedCallback();
 	}
 
-	setState(state) {
-		super.setState(state);
-		let files = this._files;
-		if(files) { // re-render to inject dummy files
-			render(this, { field: this.field, note: this.note }, this.messages,
-					{ state, files });
-		}
+	render(state, files) {
+		super.render(state, files || this._files);
 	}
 });
