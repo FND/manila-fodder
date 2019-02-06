@@ -23,6 +23,6 @@
 	},
 	"devDependencies": {
 		"eslint-config-fnd": "^1.6.0",
-		"faucet-pipeline-js": "~1.1.1"
+		"faucet-pipeline-esnext": "~1.1.1"
 	}
 }
