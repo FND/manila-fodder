@@ -39,7 +39,12 @@ export default class ManilaFodder extends HTMLElement {
 
 		let { files } = ev.dataTransfer;
 		if(files.length < 2 || this.multiple) {
-			this.field.files = files;
+			try {
+				this.field.files = files;
+			} catch(err) { // `#files` is read-only in Internet Explorer
+				this.setState("rejected"); // TODO: IE-specific error message
+				return;
+			}
 			this.setState("settled");
 		} else {
 			this.reset();
